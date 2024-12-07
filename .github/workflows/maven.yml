@@ -36,7 +36,7 @@ jobs:
 
     - name: Docker Image Build
       run: |
-        docker build .
+        docker build -t myapp/image .
         docker images
     
         
