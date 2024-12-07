@@ -43,7 +43,7 @@ jobs:
     - name: Docker tag
       run:
         docker image tag myapp/image:latest sainaveenakula/cicd:latest
-        docker image tag myapp/image:latest sainaveenakula/cicd:${{github.run_number}}
+        # docker image tag myapp/image:latest sainaveenakula/cicd:${{github.run_number}}
 
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
@@ -52,6 +52,11 @@ jobs:
         format: 'json'
         # output: 'trivy-results.sarif'
         # severity: 'CRITICAL,HIGH'
+
+    - name: Docker Push
+      run: |
+        echo ${{secrets.DOCKER_PASS}} | docker login --username sainaveenakula --password-stdin
+        docker push sainaveenakula/cicd:latest
     
 
     # # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
