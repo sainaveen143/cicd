@@ -32,6 +32,7 @@ jobs:
         mvn -Dmaven.test.skip=true -B package --file ./JtProject/pom.xml
         ls
         ls JtProject
+        ls JtProject/target
         
 
     # # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
