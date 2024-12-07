@@ -42,7 +42,7 @@ jobs:
     - name: Docker tag
       run:
         docker image tag myapp/image:latest sainaveenakula/cicd:latest
-        docker image tag myapp/image:latest sainaveenakula/cicd:$BUILD_NUMBER
+        # docker image tag myapp/image:latest sainaveenakula/cicd:$BUILD_NUMBER
 
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
