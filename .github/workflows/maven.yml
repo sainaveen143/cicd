@@ -38,6 +38,7 @@ jobs:
       run: |
         docker build -t myapp/image .
         docker images
+        echo $BUILD_NUMBER
 
     - name: Docker tag
       run:
