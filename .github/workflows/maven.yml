@@ -29,7 +29,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        mvn -B package --file jtProject/pom.xml
+        mvn -B package --file ./JtProject/pom.xml
         ls
 
     # # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
